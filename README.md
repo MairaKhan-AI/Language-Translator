@@ -1,4 +1,5 @@
 # 🌍 Language Translator
+
 > 🌍 Translate text between multiple languages instantly with a simple Streamlit interface.
 
 A simple and user-friendly multilingual text translation web application built with **Python** and **Streamlit** as part of the **CodeAlpha AI Internship 2026**. It uses the **deep-translator** library to translate text between multiple languages through Google Translate.
