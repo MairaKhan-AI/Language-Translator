@@ -48,5 +48,4 @@ if translate_btn:
             )
 
 st.divider()
-
 st.caption("Developed by Maira Khan • 2026")
