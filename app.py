@@ -5,11 +5,6 @@ from translator import LANGUAGES
 st.title("🌍 Language Translator")
 st.caption("Translate text between multiple languages instantly.")
 
-# Name input
-name = st.text_input("Enter your name")
-if name:
-    st.write(f"Welcome, {name}! 👋")
-
 # Language selection
 source = st.selectbox("Source Language", list(LANGUAGES.keys()))
 target = st.selectbox("Target Language", list(LANGUAGES.keys()))
@@ -18,13 +13,10 @@ target = st.selectbox("Target Language", list(LANGUAGES.keys()))
 text = st.text_area("Enter text", placeholder="Type something to translate...")
 
 # Buttons
-col1, col2 = st.columns(2)
-translate_btn = col1.button("🔄 Translate")
+translate_btn = st.button("🔄 Translate")
 
 if translate_btn:
-    if not name.strip():
-        st.warning("Please enter your name.")
-    elif not text.strip():
+    if not text.strip():
         st.warning("⚠️ Please enter text to translate.")
     elif source == target:
         st.warning("⚠️ Source and target languages cannot be the same.")
@@ -38,7 +30,6 @@ if translate_btn:
             st.success("Translation completed successfully!")
             st.subheader("✅ Translation Result")
             with st.container():
-                st.markdown(f"**👤 User:** {name}")
                 st.markdown(f"**🌐 Source Language:** {source}")
                 st.markdown(f"**🎯 Target Language:** {target}")
 
@@ -58,4 +49,4 @@ if translate_btn:
 
 st.divider()
 
-st.caption("Developed by Maira Khan • CodeAlpha AI Internship 2026")
+st.caption("Developed by Maira Khan • 2026")
