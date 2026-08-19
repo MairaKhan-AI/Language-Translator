@@ -369,6 +369,7 @@ with source_col:
         placeholder="Type or paste your text here...",
         height=250,
         label_visibility="collapsed",
+        key="source_text",
     )
 
 
@@ -417,6 +418,17 @@ with result_col:
             unsafe_allow_html=True,
         )
 
+# --------------------------------------------------
+# Clear Function
+# --------------------------------------------------
+
+
+def clear_translation():
+    st.session_state.source_text = ""
+    st.session_state.translated_text = ""
+    st.session_state.last_source = ""
+    st.session_state.last_target = ""
+
 
 # --------------------------------------------------
 # Action Buttons
@@ -441,21 +453,8 @@ with button_col2:
     clear_btn = st.button(
         "🧹 Clear",
         use_container_width=True,
+        on_click=clear_translation,
     )
-
-
-# --------------------------------------------------
-# Clear Button
-# --------------------------------------------------
-
-if clear_btn:
-
-    st.session_state.translated_text = ""
-    st.session_state.last_source = ""
-    st.session_state.last_target = ""
-
-    st.rerun()
-
 
 # --------------------------------------------------
 # Translation Logic
